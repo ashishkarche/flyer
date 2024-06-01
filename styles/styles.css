@@ -95,7 +95,7 @@ body {
 
 .image-section {
     flex: 1;
-    background: url('/resource/home.png') no-repeat center center;
+    background: url('resource/home.png') no-repeat center center;
     background-size: cover;
     /* height: 300px; */
 }
