@@ -95,7 +95,7 @@ body {
 
 .image-section {
     flex: 1;
-    background: url('resource/home.png') no-repeat center center;
+    background: url('../resource/home.png') no-repeat center center;
     background-size: cover;
     /* height: 300px; */
 }
@@ -317,7 +317,7 @@ body {
 
 .feedback-section .logos-with-bg {
     position: relative;
-    width: 1920px;
+    width: 1500;
     height: 310px;
     background: rgba(255, 0, 0, 0.81) url('img/NoPath - Copy.png') 0% 0% no-repeat padding-box;
     display: flex;
