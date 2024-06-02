@@ -5,19 +5,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Marketing Agency</title>
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+        }
+
+        .text-section {
+            max-width: 50%;
+        }
+
+        .text-section h1 {
+            font-size: 3rem;
+        }
+        .text-section h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .text-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .text-section .btn {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container1 {
+            padding: 50px;
+        }
+
+        .text-section1 {
+            text-align: center;
+        }
+
+        .text-section1 h2 {
+            margin: 10px 0;
+        }
+        .text-section1 h1 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .why-choose-us {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .why-choose-us h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .why-choose-us .row .col-md-3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us .row .col-md-3 img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .project-section {
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-section .image {
+            flex: 1;
+        }
+
+        .project-section .content {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .project-section .content div {
+            padding: 20px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .project-section .content .active {
+            background-color: #ff0000;
+            color: #fff;
+        }
+
+        .highlight-section {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .highlight-section h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .highlight-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .highlight-card {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-card svg {
+            margin-bottom: 10px;
+        }
+
+        .highlight-card p {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .clients-feedback {
+            text-align: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+
+        .clients-feedback h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .clients-feedback h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .clients-feedback .feedback {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .clients-feedback .feedback img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .clients-feedback .feedback p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .clients-feedback .feedback h3 {
+            font-size: 1.5rem;
+            color: #000;
+            margin: 10px 0;
+        }
+
+        .clients-feedback .feedback span {
+            font-size: 1rem;
+            color: #777;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="container">
         <div class="text-section">
-            <h1>AWARD WINNING</h1>
-            <h2>DIGITAL MARKETING AGENCY</h2>
+            <h2>AWARD WINNING</h2>
+            <h1>DIGITAL MARKETING AGENCY</h1>
             <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac
                 at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p>
-            <button id="contactUsButton">CONTACT US</button>
+            <button class="btn" data-toggle="modal" data-target="#contactModal">CONTACT US</button>
         </div>
-        <div class="image-section"></div>
+        <div class="image-section">
+            <img src="/resource/home.png" alt="Marketing Image">
+        </div>
     </div>
 
     <div class="container1">
@@ -27,46 +227,107 @@
             <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac
                 at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p>
         </div>
-        <div class="slider" id="slider">
-            <div class="slider-content">
-                <div class="slide">
-                    <img src="resource/1.png" alt="Service 1">
-                    <div class="hover-content">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="resource/1.png" alt="First slide">
+                    <div class="carousel-caption d-none d-md-block">
                         <h3>WEB DEVELOPMENT</h3>
                         <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
                             fringilla.</p>
-                        <button onclick="window.open('https://fylehq.com', '_blank')">READ MORE</button>
+                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
+                            MORE</button>
                     </div>
                 </div>
-                <div class="slide">
-                    <img src="resource/2.png" alt="Service 2">
-                    <div class="hover-content">
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="resource/2.png" alt="Second slide">
+                    <div class="carousel-caption d-none d-md-block">
                         <h3>WEB DEVELOPMENT</h3>
                         <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
                             fringilla.</p>
-                        <button onclick="window.open('https://fylehq.com', '_blank')">READ MORE</button>
+                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
+                            MORE</button>
                     </div>
                 </div>
-                <div class="slide">
-                    <img src="resource/3.png" alt="Service 3">
-                    <div class="hover-content">
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="resource/3.png" alt="Third slide">
+                    <div class="carousel-caption d-none d-md-block">
                         <h3>WEB DEVELOPMENT</h3>
                         <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
                             fringilla.</p>
-                        <button onclick="window.open('https://fylehq.com', '_blank')">READ MORE</button>
+                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
+                            MORE</button>
                     </div>
                 </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-        <div class="slider-nav" id="slider-nav">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
+    </div>
+
+    <div class="why-choose-us">
+        <h2>WHY CHOOSE US</h2>
+        <h1>WHY WE ARE BEST</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="resource/1.svg" alt="Vision and Target">
+                    <h3>Clarified Vision & Target</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="resource/2.svg" alt="High Performance">
+                    <h3>High Performance</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="resource/3.svg" alt="Maintain Security">
+                    <h3>Maintain Security</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+                </div>
+                <div class="col-md-3">
+                    <img src="resource/4.svg" alt="Better Strategy & Quality">
+                    <h3>Better Strategy & Quality</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur sadipscing elitr, sed diam nonumy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-section">
+        <div class="image">
+            <img id="projectImage" src="resource/11.png" alt="Project Image" class="img-fluid">
+        </div>
+        <div class="content">
+            <div class="active" data-image="resource/11.png">
+                <h3>Better Strategy & Quality</h3>
+                <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
+            </div>
+            <div data-image="resource/1.png">
+                <h3>Genderless Kei – Japan’s Hot</h3>
+                <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
+            </div>
+            <div data-image="resource/2.png">
+                <h3>Genderless Kei – Japan’s Hot</h3>
+                <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
+            </div>
         </div>
     </div>
 
     <div class="highlight-section">
-        <h2>OUR COMPANY GROWTH</h2>
+        <h2>EXPERTS GROWTH</h2>
+        <h1>OUR COMPANY GROWTH</h1>
         <div class="highlight-cards">
             <div class="highlight-card">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36" fill="#FF0000">
@@ -102,72 +363,68 @@
             </div>
         </div>
     </div>
-
-    <div class="feedback-section">
-        <h3>CLIENT'S FEEDBACK</h3>
-        <h2>WHAT PEOPLE SAY ABOUT US!</h2>
-        <p>
-            <span class="client-name">JANNAT TUMPA</span> The standard chunk of Lorem Ipsum used since the 1500s is
-            reproduced below for those interested. Sections Bonorum et Malorum original.
-            <br>
-            <span class="client-title">JANNAT TUMPA - COO, AMERIMAR ENTERPRISES, INC.</span>
-        </p>
-        <div class="logos-with-bg">
-            <img src="resource/Group 500.png" alt="Client Logos">
+    <!-- New Client's Feedback Section -->
+    <div class="clients-feedback">
+        <h2>CLIENT'S FEEDBACK </h2>
+        <h1>PEOPLE SAY'S ABOUT US !</h1>
+        <div class="feedback">
+            <p>Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                interested. Sections Bonorum et Malorum original.</p>
+            <h3>JANNAT TUMPA</h3>
+            <span>COO, AMERIMAR ENTERPRISES, INC.</span>
         </div>
     </div>
 
-
-
-    <div class="popup-overlay" id="popupOverlay"></div>
-
-    <div class="popup-form" id="popupForm">
-        <h3>Talk to us</h3>
-        <form action="https://getform.io/f/pbnvgkxb" method="POST">
-            <input type="email" name="email" placeholder="Work email*" required><br>
-            <input type="text" name="first_name" placeholder="First name*" required>
-            <input type="text" name="last_name" placeholder="Last name*" required><br>
-            <input type="checkbox" name="consent" required> I agree to Fyle's terms and conditions, and provide consent
-            to send me communication.<br>
-            <button type="submit">Contact Us</button>
-        </form>
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Talk to us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="https://getform.io/f/pbnvgkxb" method="POST">
+                        <div class="form-group">
+                            <label for="workEmail">Work email</label>
+                            <input type="email" class="form-control" id="workEmail" name="work_email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First name</label>
+                            <input type="text" class="form-control" id="firstName" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name</label>
+                            <input type="text" class="form-control" id="lastName" name="last_name" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">I agree to Fyle's terms and conditions, and
+                                provide consent to send me communication.</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Contact Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.getElementById('contactUsButton').addEventListener('click', function () {
-            document.getElementById('popupOverlay').style.display = 'block';
-            document.getElementById('popupForm').style.display = 'block';
-        });
-
-        document.getElementById('popupOverlay').addEventListener('click', function () {
-            document.getElementById('popupOverlay').style.display = 'none';
-            document.getElementById('popupForm').style.display = 'none';
-        });
-
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const sliderContent = document.querySelector('.slider-content');
-        const navDots = document.querySelectorAll('.slider-nav span');
-
-        function showSlide(index) {
-            sliderContent.style.transform = `translateX(-${index * 100}%)`;
-            navDots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        navDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentIndex = index;
-                showSlide(index);
+        $(document).ready(function () {
+            $('.project-section .content div').on('click', function () {
+                $('.project-section .content div').removeClass('active');
+                $(this).addClass('active');
+                var imageSrc = $(this).data('image');
+                $('#projectImage').attr('src', imageSrc);
             });
         });
-
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }, 3000);
     </script>
 </body>
 
