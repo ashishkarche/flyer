@@ -17,17 +17,37 @@
 
         .text-section {
             max-width: 50%;
+            padding: 10px;
         }
 
         .text-section h1 {
             font-size: 3rem;
         }
+
         .text-section h2 {
             color: #ff0000;
             font-size: 1.5rem;
         }
 
         .text-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .text-section1 {
+            max-width: 50%;
+        }
+
+        .text-section1 h1 {
+            font-size: 3rem;
+        }
+
+        .text-section1 h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
+        .text-section1 p {
             font-size: 1.2rem;
             color: #555;
         }
@@ -50,19 +70,104 @@
             padding: 50px;
         }
 
-        .text-section1 {
-            text-align: center;
+        .card-img-top {
+            height: auto;
+            object-fit: cover;
         }
 
-        .text-section1 h2 {
-            margin: 10px 0;
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
         }
-        .text-section1 h1 {
+
+        .dot.active {
+            background-color: #777;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            margin-right: 20px;
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ff0000;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay-content p {
+            padding: 10px;
+        }
+
+        .card:hover .overlay-content {
+            opacity: 1;
+        }
+
+        .card-img-top {
+            transition: opacity 0.3s;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .dot.active {
+            background-color: #ff0000;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .overlay-content .btn {
+            border: none;
+            background-color: #fff;
+            color: #777;
+        }
+
+        .overlay-content .btn:hover {
+            background-color: #fff;
             color: #ff0000;
-            font-size: 1.5rem;
+        }
+
+        .card:hover .card-img-top {
+            opacity: 0;
         }
 
         .why-choose-us {
+            display: block;
             text-align: center;
             padding: 50px 0;
         }
@@ -89,6 +194,25 @@
             align-items: center;
             justify-content: center;
         }
+
+        .text-section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .text-section2 h1,
+        .text-section2 h2 {
+            margin: 0;
+        }
+
+        .text-section2 h2 {
+            color: #ff0000;
+            font-size: 1.5rem;
+        }
+
 
         .project-section .image {
             flex: 1;
@@ -150,57 +274,115 @@
         }
 
         .highlight-card p {
-            font-size: 1.2rem;
+            font-size: 2.5rem;
             margin: 0;
         }
 
-        .clients-feedback {
+        .feedback-section {
+            display: block;
             text-align: center;
-            padding: 50px;
-            background-color: #f9f9f9;
+            padding: 50px 0;
         }
 
-        .clients-feedback h2 {
-            color: #ff0000;
-            font-size: 1.5rem;
-        }
-
-        .clients-feedback h1 {
-            font-size: 2.5rem;
+        .feedback-section .title {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .clients-feedback .feedback {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .clients-feedback .feedback img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+        .feedback-section .feedback {
+            font-size: 37px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .clients-feedback .feedback p {
-            font-size: 1.2rem;
-            color: #555;
+        .feedback-section .quote {
+            font-size: 16px;
+            margin-bottom: 20px;
         }
 
-        .clients-feedback .feedback h3 {
-            font-size: 1.5rem;
-            color: #000;
-            margin: 10px 0;
+        .feedback-section .author {
+            font-size: 16px;
+            font-weight: bold;
         }
 
-        .clients-feedback .feedback span {
-            font-size: 1rem;
-            color: #777;
+        .footer {
+            background-color: red;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .footer .logos img {
+            margin: 0 15px;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .text-section,
+            .image-section {
+                max-width: 100%;
+            }
+
+            .text-section {
+                margin-bottom: 20px;
+            }
+
+            .project-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .project-section .content {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .text-section h1,
+            .text-section1 h1 {
+                font-size: 2.5rem;
+            }
+
+            .text-section p,
+            .text-section1 p {
+                font-size: 1rem;
+            }
+
+            .text-section2 h1 {
+                font-size: 2rem;
+            }
+
+            .highlight-card p {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 20px;
+            }
+
+            .container1 {
+                padding: 20px;
+            }
+
+            .project-section {
+                padding: 20px;
+            }
+
+            .highlight-section {
+                padding: 20px;
+            }
+
+            .feedback-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -222,57 +404,132 @@
 
     <div class="container1">
         <div class="text-section1">
-            <h1>WHAT WE DO</h1>
-            <h2>SERVICES PROVIDE FOR YOU</h2>
+            <h2>WHAT WE DO</h2>
+            <h1>SERVICES PROVIDE FOR YOU</h1>
             <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac
                 at purus, Morbi sed lacus nec risus finibus feugiat et fermentum</p>
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="resource/1.png" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>WEB DEVELOPMENT</h3>
-                        <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
-                            fringilla.</p>
-                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
-                            MORE</button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resource/2.png" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>WEB DEVELOPMENT</h3>
-                        <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
-                            fringilla.</p>
-                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
-                            MORE</button>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resource/3.png" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>WEB DEVELOPMENT</h3>
-                        <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit
-                            fringilla.</p>
-                        <button class="btn btn-primary" onclick="window.open('https://fylehq.com', '_blank')">READ
-                            MORE</button>
-                    </div>
+        <div class="scroll-container">
+            <div class="card">
+                <img src="resource/1.png" class="card-img-top" alt="Image 1">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn1">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="card">
+                <img src="resource/2.png" class="card-img-top" alt="Image 2">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn2">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/3.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/2.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/1.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/2.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/1.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/2.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/1.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="resource/2.png" class="card-img-top" alt="Image 3">
+                <div class="overlay-content">
+                    <img src="resource/icon.svg" style="padding: 10px; justify-content: center;">
+                    <h2>Web Development</h2>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <button class="btn btn-primary" id="btn3">Read More <img src="resource/arrow.svg"
+                            style="margin-left: 10px;"></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <div class="text">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -304,7 +561,10 @@
             </div>
         </div>
     </div>
-
+    <div class="text-section2">
+        <h2>OUR PROJECT</h2>
+        <h1>WHY ARE WE BEST</h1>
+    </div>
     <div class="project-section">
         <div class="image">
             <img id="projectImage" src="resource/11.png" alt="Project Image" class="img-fluid">
@@ -314,11 +574,11 @@
                 <h3>Better Strategy & Quality</h3>
                 <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
             </div>
-            <div data-image="resource/1.png">
+            <div data-image="resource/34.jpg">
                 <h3>Genderless Kei – Japan’s Hot</h3>
                 <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
             </div>
-            <div data-image="resource/2.png">
+            <div data-image="resource/35.jpg">
                 <h3>Genderless Kei – Japan’s Hot</h3>
                 <p>Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of</p>
             </div>
@@ -335,7 +595,7 @@
                     <path
                         d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
-                <p>199+<br>Satisfied Customers</p>
+                <p>199+</p>Satisfied Customers
             </div>
             <div class="highlight-card">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36" fill="#FF0000">
@@ -343,7 +603,7 @@
                     <path
                         d="M12 8c-1.1 0-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4v4h2v-2h2v-2h-2v-2c0-1.1-.9-2-2-2zm0 0c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
                 </svg>
-                <p>1591+<br>Days Of Operation</p>
+                <p>1591+</p>Days Of Operation
             </div>
             <div class="highlight-card">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36" fill="#FF0000">
@@ -351,7 +611,7 @@
                     <path
                         d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6.5 14l-5-5 1.41-1.41L12.5 14.17 17.09 9.59 18.5 11l-6 6z" />
                 </svg>
-                <p>283+<br>Completed Projects</p>
+                <p>283+</p>Completed Projects
             </div>
             <div class="highlight-card">
                 <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 0 24 24" width="36" fill="#FF0000">
@@ -359,23 +619,27 @@
                     <path
                         d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V20h2v-5h4v5h2v-5.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm0 10.5c-1.93 0-3.5-1.57-3.5-3.5S10.07 5.5 12 5.5s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
                 </svg>
-                <p>75+<br>Awards Won</p>
+                <p>75+</p>Awards Won
             </div>
         </div>
     </div>
-    <!-- New Client's Feedback Section -->
-    <div class="clients-feedback">
-        <h2>CLIENT'S FEEDBACK </h2>
-        <h1>PEOPLE SAY'S ABOUT US !</h1>
-        <div class="feedback">
-            <p>Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                interested. Sections Bonorum et Malorum original.</p>
-            <h3>JANNAT TUMPA</h3>
-            <span>COO, AMERIMAR ENTERPRISES, INC.</span>
+    <div class="container feedback-section">
+        <div class="title">CLIENT'S FEEDBACK</div>
+        <div class="feedback">PEOPLE SAY'S ABOUT US !</div>
+        <div class="quote">
+            Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+            interested. Sections Bonorum et Malorum original.
+        </div>
+        <div class="author">JANNAT TUMPA - COO, AMERIMAR ENTERPRISES, INC.</div>
+    </div>
+
+    <div class="footer text-center">
+        <div class="container logos">
+            <img src="resource/Group 500.png" alt="Logo 1">
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Contact Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -387,7 +651,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="https://getform.io/f/pbnvgkxb" method="POST">
+                    <form id="contactForm" action="https://getform.io/f/pbnvgkxb" method="POST">
                         <div class="form-group">
                             <label for="workEmail">Work email</label>
                             <input type="email" class="form-control" id="workEmail" name="work_email" required>
@@ -405,8 +669,31 @@
                             <label class="form-check-label" for="terms">I agree to Fyle's terms and conditions, and
                                 provide consent to send me communication.</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Contact Us</button>
+                        <button type="submit" class="btn btn-primary"
+                            style="background-color: #FF4560; border: none;">Contact Us</button>
+
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Success</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Response submitted</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -416,6 +703,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
     <script>
         $(document).ready(function () {
             $('.project-section .content div').on('click', function () {
